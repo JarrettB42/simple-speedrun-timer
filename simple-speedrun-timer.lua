@@ -63,6 +63,7 @@ function stop_timer()
 	obs.timer_remove(timer_callback)
 end
 
+-- TODO: Add double tap prevention buffer
 function on_pause(pressed)
 	if not pressed then
 		return
@@ -126,7 +127,7 @@ function script_properties()
 end
 
 function script_description()
-	return "Simple Speedrun Timer: A hotkey controlled text timer for timed content (marathons, speedruns, etc.).\n\n" ..
+	return "A hotkey controlled text timer for timed content (marathons & speedruns).\n\n" ..
 		"Note: Unpausing the timer will cause it to snap forward, as if it were never paused. Also, you can only reset the timer while paused!"
 end
 
