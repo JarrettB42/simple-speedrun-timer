@@ -1,8 +1,11 @@
 --[[
-Simple Speedrun Timer: A hotkey controlled text timer for timed content (marathons, speedruns, etc.).
+	Simple Speedrun Timer: A hotkey controlled text timer for timed content (marathons, speedruns, etc.).
 --]]
 
+-- obs values
 obs = obslua
+hotkey_id_pause = obs.OBS_INVALID_HOTKEY_ID
+hotkey_id_reset = obs.OBS_INVALID_HOTKEY_ID
 
 -- user values
 source_name = nil
@@ -12,9 +15,6 @@ paused_color = nil
 -- internal values
 paused = true
 started_at = nil
-
-hotkey_id_pause = obs.OBS_INVALID_HOTKEY_ID
-hotkey_id_reset = obs.OBS_INVALID_HOTKEY_ID
 
 function get_time_text()
 	if not started_at then
@@ -162,3 +162,4 @@ function script_load(settings)
 	obs.obs_data_array_release(hotkey_save_array_pause)
 	obs.obs_data_array_release(hotkey_save_array_reset)
 end
+
